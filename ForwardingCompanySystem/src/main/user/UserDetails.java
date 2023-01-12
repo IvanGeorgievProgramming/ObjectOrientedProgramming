@@ -17,6 +17,7 @@ public class UserDetails {
         this.firstName = firstName;
         this.lastName = lastName;
         this.telephone = telephone;
+        this.userId = userId;
     }
 
     public UserDetails(UserDetails userDetails) {
@@ -24,6 +25,7 @@ public class UserDetails {
         this.firstName = userDetails.firstName;
         this.lastName = userDetails.lastName;
         this.telephone = userDetails.telephone;
+        this.userId = userDetails.userId;
     }
 
     // * Getters
@@ -44,11 +46,11 @@ public class UserDetails {
         return telephone;
     }
 
-    // * Setters
-
-    public void setId(int id) {
-        this.id = id;
+    public int getUserId() {
+        return userId;
     }
+
+    // * Setters
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;

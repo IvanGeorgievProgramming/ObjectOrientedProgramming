@@ -22,12 +22,6 @@ public abstract class Package {
         return id;
     }
 
-    // * Setters
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     // * Methods
 
     double getDeliveryPrice(){
