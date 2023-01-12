@@ -33,7 +33,7 @@ public class BigSizePackage extends Package {
     // * Methods
 
     @Override
-    double getDeliveryPrice() {
+    public double getDeliveryPrice() {
         return size * 5;
     }
     

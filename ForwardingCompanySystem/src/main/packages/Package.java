@@ -24,7 +24,7 @@ public abstract class Package {
 
     // * Methods
 
-    double getDeliveryPrice(){
+    public double getDeliveryPrice(){
         return 0;
     }
 

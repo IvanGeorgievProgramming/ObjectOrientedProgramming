@@ -44,7 +44,7 @@ public class SalablePackage extends Package {
     // * Methods
 
     @Override
-    double getDeliveryPrice() {
+    public double getDeliveryPrice() {
         return sizPackage.getDeliveryPrice() + (price * 0.1);
     }
     

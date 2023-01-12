@@ -12,7 +12,7 @@ public class UserDetails {
 
     // * Constructors
 
-    public UserDetails(int id, String firstName, String lastName, String telephone) {
+    public UserDetails(int id, String firstName, String lastName, String telephone, int userId) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

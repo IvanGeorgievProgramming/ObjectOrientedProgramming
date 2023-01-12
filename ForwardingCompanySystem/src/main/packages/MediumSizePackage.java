@@ -29,5 +29,12 @@ public class MediumSizePackage extends Package {
     public void setSize(double size) {
         this.size = size;
     }
+
+    // * Methods
+
+    @Override
+    public double getDeliveryPrice() {
+        return size * 4;
+    }
     
 }
