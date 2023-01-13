@@ -205,6 +205,18 @@ public class DeliverySystem {
     }
 
     public void getOrderToDeliver(int id){
+        // If there is no order with the given id, throw an exception
+        boolean found = false;
+        for(Order order : orders){
+            if(order.getId() == id){
+                found = true;
+                break;
+            }
+        }
+        if(!found){
+            throw new IllegalArgumentException("There is no order with the given id");
+        }
+
         // If the current user is not a driver, throw an exception
         if (currentUser.getRole() != Role.DRIVER) {
             throw new IllegalArgumentException("Only a driver can get an order to deliver");
@@ -223,5 +235,36 @@ public class DeliverySystem {
             }
         }
     }
-    
+
+    public void deliverOrder(int id){
+        // If there is no order with the given id, throw an exception
+        boolean found = false;
+        for(Order order : orders){
+            if(order.getId() == id){
+                found = true;
+                break;
+            }
+        }
+        if(!found){
+            throw new IllegalArgumentException("There is no order with the given id");
+        }
+
+        // If the current user is not a driver, throw an exception
+        if (currentUser.getRole() != Role.DRIVER) {
+            throw new IllegalArgumentException("Only a driver can deliver an order");
+        }
+
+        // If the order is without status DELIVERING, throw an exception
+        for(Order order : orders){
+            if(order.getId() == id){
+                if(order.getStatus() != Status.DELIVERING){
+                    throw new IllegalArgumentException("The order is not available");
+                }
+                else{
+                    order.setStatus(Status.DELIVERED);
+                    break;
+                }
+            }
+        }
+    }
 }
