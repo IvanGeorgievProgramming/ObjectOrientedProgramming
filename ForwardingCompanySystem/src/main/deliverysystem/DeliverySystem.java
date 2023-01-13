@@ -170,6 +170,8 @@ public class DeliverySystem {
         }
 
         //TODO: If the address does not belong to the current user, throw an exception
+        //TODO: If there is no address with the given id, throw an exception
+        //TODO: If there is no package with the given id, throw an exception
         
         order.setStatus(Status.CREATED);
         orders.add(order);
@@ -181,7 +183,7 @@ public class DeliverySystem {
             throw new IllegalArgumentException("Only a customer can add a package");
         }
 
-        // If the order does not belong to the current user, throw an exception
+        //If there is no order with the given id, throw an exception
         boolean found = false;
         for(Order order : orders){
             if(order.getId() == orderId){
@@ -190,8 +192,10 @@ public class DeliverySystem {
             }
         }
         if(!found){
-            throw new IllegalArgumentException("The order does not belong to the current user");
+            throw new IllegalArgumentException("There is no order with the given id");
         }
+
+        //TODO: If the address does not belong to the current user, throw an exception
 
         // Add a package to an order
         for(Order order : orders){
