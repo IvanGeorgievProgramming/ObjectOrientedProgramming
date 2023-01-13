@@ -4,11 +4,11 @@ public class UserDetails {
 
     // * Variables
 
-    private final int id;             // TODO: Unique for every instance, Can`t be changed
+    private final int id;
     private String firstName;
     private String lastName;
     private String telephone;   // TODO: Only numbers
-    private int userId;         // TODO: Unique for the user Id
+    private int userId;
 
     private static int idCounter = 0;
 

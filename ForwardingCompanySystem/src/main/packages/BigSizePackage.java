@@ -4,13 +4,16 @@ public class BigSizePackage extends Package {
 
     // * Variables
 
-    private double size;      // TODO: Must be between 7 and 9
+    private double size;
 
     // * Constructors
 
     public BigSizePackage(int id, double size){
         super(id);
         this.size = size;
+        if(size < 7 || size > 9){
+            throw new IllegalArgumentException("Size must be between 7 and 9");
+        }
     }
 
     public BigSizePackage(BigSizePackage bigSizePackage) {

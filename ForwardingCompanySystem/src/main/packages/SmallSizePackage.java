@@ -4,13 +4,16 @@ public class SmallSizePackage extends Package {
 
     // * Variables
 
-    private double size;      // TODO: Must be between 1 and 3
+    private double size;
 
     // * Constructors
 
     public SmallSizePackage(int id, double size){
         super(id);
         this.size = size;
+        if(size < 1 || size > 3){
+            throw new IllegalArgumentException("Size must be between 1 and 3");
+        }
     }
 
     public SmallSizePackage(SmallSizePackage smallSizePackage) {

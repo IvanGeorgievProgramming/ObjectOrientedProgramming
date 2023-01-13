@@ -4,7 +4,7 @@ public class SalablePackage extends Package {
 
     // * Variables
 
-    private double price;      // TODO: Must be more than 0
+    private double price;
     private Package sizPackage;
 
     // * Constructors
@@ -13,6 +13,9 @@ public class SalablePackage extends Package {
         super(id);
         this.price = price;
         this.sizPackage = sizPackage;
+        if(price < 0){
+            throw new IllegalArgumentException("Price must be more than 0");
+        }
     }
 
     public SalablePackage(SalablePackage salablePackage) {

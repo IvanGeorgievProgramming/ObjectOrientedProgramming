@@ -4,13 +4,16 @@ public class MediumSizePackage extends Package {
 
     // * Variables
 
-    private double size;      // TODO: Must be between 4 and 6
+    private double size;
 
     // * Constructors
 
     public MediumSizePackage(int id, double size){
         super(id);
         this.size = size;
+        if(size < 4 || size > 6){
+            throw new IllegalArgumentException("Size must be between 4 and 6");
+        }
     }
 
     public MediumSizePackage(MediumSizePackage mediumSizePackage) {

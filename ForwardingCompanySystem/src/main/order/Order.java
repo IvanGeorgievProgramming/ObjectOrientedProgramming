@@ -8,9 +8,9 @@ public class Order {
 
     // * Variables
 
-    private final int id;                         // TODO: Unique for every instance, Can`t be changed
+    private final int id;
     private Collection<Package> packages;
-    private int addressId;                  // TODO: Unique for the adress Id
+    private int addressId;
     private Status status;
 
     private static int idCounter = 0;
@@ -71,5 +71,9 @@ public class Order {
             totalPrice += aPackage.getDeliveryPrice();
         }
         return totalPrice;
+    }
+
+    void addPackage(Package aPackage){
+        packages.add(aPackage);
     }
 }
