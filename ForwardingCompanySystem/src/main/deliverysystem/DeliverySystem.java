@@ -186,4 +186,42 @@ public class DeliverySystem {
 
         //! Add the package to the order
     }
+
+    public void getOrderToDeliver(){
+        int random = 0;
+        boolean found = false;
+        do{
+            random = (int) (Math.random() * orders.size());
+            for(Order order : orders){
+                if(order.getId() == random){
+                    found = true;
+                    break;
+                }
+            }
+        }
+        while(found);
+
+        getOrderToDeliver(random);
+    }
+
+    public void getOrderToDeliver(int id){
+        // If the current user is not a driver, throw an exception
+        if (currentUser.getRole() != Role.DRIVER) {
+            throw new IllegalArgumentException("Only a driver can get an order to deliver");
+        }
+
+        // If the order is without status CREATED, throw an exception
+        for(Order order : orders){
+            if(order.getId() == id){
+                if(order.getStatus() != Status.CREATED){
+                    throw new IllegalArgumentException("The order is not available");
+                }
+                else{
+                    order.setStatus(Status.DELIVERING);
+                    break;
+                }
+            }
+        }
+    }
+    
 }
