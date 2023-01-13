@@ -4,7 +4,7 @@ public class UserDetails {
 
     // * Variables
 
-    private int id;             // TODO: Unique for every instance, Can`t be changed
+    private final int id;             // TODO: Unique for every instance, Can`t be changed
     private String firstName;
     private String lastName;
     private String telephone;   // TODO: Only numbers

@@ -4,7 +4,7 @@ public class Address {
 
     // * Variables
 
-    private int id;             // TODO: Unique for every instance, Can`t be changed
+    private final int id;             // TODO: Unique for every instance, Can`t be changed
     private String country;
     private String city;
     private String street;

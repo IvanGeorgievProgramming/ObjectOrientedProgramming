@@ -4,7 +4,7 @@ public class User {
 
     // * Variables
 
-    private int id;             // TODO: Unique for every instance, Can`t be changed
+    private final int id;             // TODO: Unique for every instance, Can`t be changed
     private String name;        // TODO: Can`t exist two users with the same name
     private String password;
     private Role role;

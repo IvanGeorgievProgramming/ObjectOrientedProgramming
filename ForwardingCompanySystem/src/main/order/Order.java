@@ -8,7 +8,7 @@ public class Order {
 
     // * Variables
 
-    private int id;                         // TODO: Unique for every instance, Can`t be changed
+    private final int id;                         // TODO: Unique for every instance, Can`t be changed
     private Collection<Package> packages;
     private int addressId;                  // TODO: Unique for the adress Id
     private Status status;
