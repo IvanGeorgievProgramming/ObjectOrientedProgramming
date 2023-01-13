@@ -1,6 +1,6 @@
-package main.packages;
+package main.ppackages;
 
-public class BigSizePackage extends Package {
+public class BigSizePPackage extends PPackage {
 
     // * Variables
 
@@ -8,7 +8,7 @@ public class BigSizePackage extends Package {
 
     // * Constructors
 
-    public BigSizePackage(int id, double size){
+    public BigSizePPackage(int id, double size){
         super(id);
         this.size = size;
         if(size < 7 || size > 9){
@@ -16,7 +16,7 @@ public class BigSizePackage extends Package {
         }
     }
 
-    public BigSizePackage(BigSizePackage bigSizePackage) {
+    public BigSizePPackage(BigSizePPackage bigSizePackage) {
         super(bigSizePackage);
         this.size = bigSizePackage.size;
     }

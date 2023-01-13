@@ -1,6 +1,6 @@
-package main.packages;
+package main.ppackages;
 
-public abstract class Package {
+public abstract class PPackage {
 
     // * Variables
 
@@ -10,11 +10,11 @@ public abstract class Package {
 
     // * Constructors
 
-    public Package(int id) {
+    public PPackage(int id) {
         this.id = idCounter++;
     }
 
-    public Package(Package aPackage) {
+    public PPackage(PPackage aPackage) {
         this.id = aPackage.id;
     }
 

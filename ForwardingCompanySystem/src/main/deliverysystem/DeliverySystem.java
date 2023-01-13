@@ -2,6 +2,7 @@ package main.deliverysystem;
 
 import main.user.*;
 import main.order.*;
+import main.ppackages.PPackage;
 import main.address.*;
 
 import java.util.Collection;
@@ -174,17 +175,31 @@ public class DeliverySystem {
         orders.add(order);
     }
 
-    public void addPackage(Package pack, int orderId){
+    public void addPackage(PPackage pPackage, int orderId){
         // If the current user is not a customer, throw an exception
         if (currentUser.getRole() != Role.CUSTOMER) {
             throw new IllegalArgumentException("Only a customer can add a package");
         }
 
-        //TODO: If the order does not belong to the current user, throw an exception
+        // If the order does not belong to the current user, throw an exception
+        boolean found = false;
+        for(Order order : orders){
+            if(order.getId() == orderId){
+                found = true;
+                break;
+            }
+        }
+        if(!found){
+            throw new IllegalArgumentException("The order does not belong to the current user");
+        }
 
-        //TODO: If the order does not exist, throw an exception
-
-        //! Add the package to the order
+        // Add a package to an order
+        for(Order order : orders){
+            if(order.getId() == orderId){
+                order.getPPackages().add(pPackage);
+                break;
+            }
+        }
     }
 
     public void getOrderToDeliver(){

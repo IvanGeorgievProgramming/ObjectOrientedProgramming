@@ -1,15 +1,15 @@
-package main.packages;
+package main.ppackages;
 
-public class SalablePackage extends Package {
+public class SalablePPackage extends PPackage {
 
     // * Variables
 
     private double price;
-    private Package sizPackage;
+    private PPackage sizPackage;
 
     // * Constructors
 
-    public SalablePackage(int id, double price, Package sizPackage){
+    public SalablePPackage(int id, double price, PPackage sizPackage){
         super(id);
         this.price = price;
         this.sizPackage = sizPackage;
@@ -18,7 +18,7 @@ public class SalablePackage extends Package {
         }
     }
 
-    public SalablePackage(SalablePackage salablePackage) {
+    public SalablePPackage(SalablePPackage salablePackage) {
         super(salablePackage);
         this.price = salablePackage.price;
         this.sizPackage = salablePackage.sizPackage;
@@ -30,7 +30,7 @@ public class SalablePackage extends Package {
         return price;
     }
 
-    public Package getSizPackage() {
+    public PPackage getSizPackage() {
         return sizPackage;
     }
 
@@ -40,7 +40,7 @@ public class SalablePackage extends Package {
         this.price = price;
     }
 
-    public void setSizPackage(Package sizPackage) {
+    public void setSizPackage(PPackage sizPackage) {
         this.sizPackage = sizPackage;
     }
 

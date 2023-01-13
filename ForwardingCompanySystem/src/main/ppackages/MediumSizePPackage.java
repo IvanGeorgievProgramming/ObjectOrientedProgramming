@@ -1,6 +1,6 @@
-package main.packages;
+package main.ppackages;
 
-public class MediumSizePackage extends Package {
+public class MediumSizePPackage extends PPackage {
 
     // * Variables
 
@@ -8,7 +8,7 @@ public class MediumSizePackage extends Package {
 
     // * Constructors
 
-    public MediumSizePackage(int id, double size){
+    public MediumSizePPackage(int id, double size){
         super(id);
         this.size = size;
         if(size < 4 || size > 6){
@@ -16,7 +16,7 @@ public class MediumSizePackage extends Package {
         }
     }
 
-    public MediumSizePackage(MediumSizePackage mediumSizePackage) {
+    public MediumSizePPackage(MediumSizePPackage mediumSizePackage) {
         super(mediumSizePackage);
         this.size = mediumSizePackage.size;
     }
