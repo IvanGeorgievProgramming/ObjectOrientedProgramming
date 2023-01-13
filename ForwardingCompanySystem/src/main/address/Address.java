@@ -10,10 +10,12 @@ public class Address {
     private String street;
     private int userId;         // TODO: Unique for the user Id
 
+    private static int idCounter = 0;
+
     // * Constructors
 
-    public Address(int id, String country, String city, String street, int userId) {
-        this.id = id;
+    public Address(String country, String city, String street, int userId) {
+        this.id = idCounter++;
         this.country = country;
         this.city = city;
         this.street = street;

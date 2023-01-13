@@ -9,10 +9,12 @@ public class User {
     private String password;
     private Role role;
 
+    private static int idCounter = 0;
+
     // * Constructors
 
-    public User(int id, String name, String password, Role role) {
-        this.id = id;
+    public User(String name, String password, Role role) {
+        this.id = idCounter++;
         this.name = name;
         this.password = password;
         this.role = role;

@@ -13,10 +13,12 @@ public class Order {
     private int addressId;                  // TODO: Unique for the adress Id
     private Status status;
 
+    private static int idCounter = 0;
+
     // * Constructors
 
-    public Order(int id, Collection<Package> packages, int addressId, Status status) {
-        this.id = id;
+    public Order(Collection<Package> packages, int addressId, Status status) {
+        this.id = idCounter++;
         this.packages = packages;
         this.addressId = addressId;
         this.status = status;

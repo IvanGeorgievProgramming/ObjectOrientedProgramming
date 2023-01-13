@@ -10,10 +10,12 @@ public class UserDetails {
     private String telephone;   // TODO: Only numbers
     private int userId;         // TODO: Unique for the user Id
 
+    private static int idCounter = 0;
+
     // * Constructors
 
-    public UserDetails(int id, String firstName, String lastName, String telephone, int userId) {
-        this.id = id;
+    public UserDetails(String firstName, String lastName, String telephone, int userId) {
+        this.id = idCounter++;              // ? Maybe idCounter++ change the value of idCounter
         this.firstName = firstName;
         this.lastName = lastName;
         this.telephone = telephone;
@@ -62,5 +64,9 @@ public class UserDetails {
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }
