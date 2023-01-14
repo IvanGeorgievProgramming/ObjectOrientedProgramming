@@ -27,8 +27,6 @@ public class DeliverySystem {
         this.orders = null;
         this.addresses = null;
         this.currentUser = null;
-
-        registerAdmin("admin", "admin123");
     }
 
     public DeliverySystem(Collection<User> users, Collection<Order> orders, Collection<Address> addresses, User currentUser) {
@@ -39,6 +37,8 @@ public class DeliverySystem {
         this.currentUser = currentUser;
 
         registerAdmin("admin", "admin123");
+
+        this.currentUser = this.users.iterator().next();
     }
 
     public DeliverySystem(DeliverySystem deliverySystem) {
@@ -91,10 +91,87 @@ public class DeliverySystem {
 
     // * Methods
 
+    public void printDeliverySystem() {
+        // Print the Delivery system Id
+        System.out.println("\nDelivery System Id: " + id);
+
+        // Print the users
+        System.out.println("Users: ");
+        if(users == null) {
+            System.out.println("No current users");
+        }
+        else{
+            for (User user : users) {
+                System.out.println("    Id: " + user.getId());
+                System.out.println("    Name: " + user.getName());
+                System.out.println("    Password: " + user.getPassword());
+                System.out.println("    Role: " + user.getRole());
+            }
+        }
+
+        // Print the orders
+        System.out.println("Orders: ");
+        if(orders == null) {
+            System.out.println("No current orders");
+        }
+        else{
+            for (Order order : orders) {
+                System.out.println("    Id: " + order.getId());
+
+                if(order.getPPackages() == null) {
+                    System.out.println("        No current packages");
+                }
+                else{
+                    for (PPackage pPackage : order.getPPackages()) {
+                        System.out.println("        Package Id: " + pPackage.getId());
+                    }
+                }
+
+                System.out.println("        Address Id: " + order.getAddressId());
+
+                if(order.getStatus() == null) {
+                    System.out.println("        No current status");
+                }
+                else{
+                    System.out.println("        Status: " + order.getStatus());
+                }
+            }
+        }
+
+        // Print the addresses
+        System.out.println("Addresses: ");
+        if(addresses == null) {
+            System.out.println("    No current addresses");
+        }
+        else{
+            for (Address address : addresses) {
+                System.out.println("    Id: " + address.getId());
+                System.out.println("    Country: " + address.getCountry());
+                System.out.println("    City: " + address.getCity());
+                System.out.println("    Street: " + address.getStreet());
+                System.out.println("    User Id: " + address.getUserId());
+            }
+        }
+
+        // Print the current user
+        System.out.println("Current User: ");
+        if(currentUser == null) {
+            System.out.println("    No current user");
+        }
+        else{
+            System.out.println("    Id: " + currentUser.getId());
+            System.out.println("    Name: " + currentUser.getName());
+            System.out.println("    Password: " + currentUser.getPassword());
+            System.out.println("    Role: " + currentUser.getRole());
+        }
+    }
+
     public void login(String name, String password) {
         for (User user : users) {
             if (user.getName().equals(name) && user.getPassword().equals(password)) {
-                currentUser = user;
+                currentUser.setName(user.getName());
+                currentUser.setPassword(user.getPassword());
+                currentUser.setRole(user.getRole());
                 return;
             }
         }
