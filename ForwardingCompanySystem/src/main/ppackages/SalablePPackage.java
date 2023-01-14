@@ -9,8 +9,8 @@ public class SalablePPackage extends PPackage {
 
     // * Constructors
 
-    public SalablePPackage(int id, double price, PPackage sizPackage){
-        super(id);
+    public SalablePPackage(double price, PPackage sizPackage){
+        super();
         this.price = price;
         this.sizPackage = sizPackage;
         if(price < 0){

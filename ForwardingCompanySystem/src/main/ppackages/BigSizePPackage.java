@@ -8,8 +8,8 @@ public class BigSizePPackage extends PPackage {
 
     // * Constructors
 
-    public BigSizePPackage(int id, double size){
-        super(id);
+    public BigSizePPackage(double size){
+        super();
         this.size = size;
         if(size < 7 || size > 9){
             throw new IllegalArgumentException("Size must be between 7 and 9");

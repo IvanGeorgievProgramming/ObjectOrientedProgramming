@@ -8,8 +8,8 @@ public class SmallSizePPackage extends PPackage {
 
     // * Constructors
 
-    public SmallSizePPackage(int id, double size){
-        super(id);
+    public SmallSizePPackage(double size){
+        super();
         this.size = size;
         if(size < 1 || size > 3){
             throw new IllegalArgumentException("Size must be between 1 and 3");

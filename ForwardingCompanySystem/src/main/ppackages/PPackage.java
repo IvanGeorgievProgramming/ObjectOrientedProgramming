@@ -10,7 +10,7 @@ public abstract class PPackage {
 
     // * Constructors
 
-    public PPackage(int id) {
+    public PPackage() {
         this.id = idCounter++;
     }
 

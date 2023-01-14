@@ -8,8 +8,8 @@ public class MediumSizePPackage extends PPackage {
 
     // * Constructors
 
-    public MediumSizePPackage(int id, double size){
-        super(id);
+    public MediumSizePPackage(double size){
+        super();
         this.size = size;
         if(size < 4 || size > 6){
             throw new IllegalArgumentException("Size must be between 4 and 6");

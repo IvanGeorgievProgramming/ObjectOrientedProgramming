@@ -17,6 +17,13 @@ public class Order {
 
     // * Constructors
 
+    public Order(int addressId) {
+        this.id = idCounter++;
+        this.PPackages = null;
+        this.addressId = addressId;
+        this.status = null;
+    }
+
     public Order(Collection<PPackage> PPackages, int addressId, Status status) {
         this.id = idCounter++;
         this.PPackages = PPackages;
@@ -71,5 +78,9 @@ public class Order {
             totalPrice += aPackage.getDeliveryPrice();
         }
         return totalPrice;
+    }
+
+    public void addPackage(PPackage aPackage){
+        PPackages.add(aPackage);
     }
 }
