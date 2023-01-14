@@ -391,14 +391,28 @@ public class App {
     }
 
     public static void getRandomOrderToDeliver(DeliverySystem deliverySystem){
-        //...
+        deliverySystem.getOrderToDeliver();
     }
 
     public static void getOrderToDeliver(DeliverySystem deliverySystem){
-        //...
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Order Id: ");
+        int orderId = scanner.nextInt();
+
+        deliverySystem.getOrderToDeliver(orderId);
+
+        scanner.close();
     }
 
     public static void deliverOrder(DeliverySystem deliverySystem){
-        //...
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Order Id: ");
+        int orderId = scanner.nextInt();
+
+        deliverySystem.deliverOrder(orderId);
+
+        scanner.close();
     }
 }
