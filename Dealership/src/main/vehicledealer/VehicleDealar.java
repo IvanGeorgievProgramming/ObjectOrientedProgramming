@@ -6,7 +6,7 @@ import main.vehicles.*;
 public class VehicleDealar {
 
     //* Parameters
-    
+
     Set<Car> cars;
     Set<SUV> suvs;
     Set<Truck> trucks;
@@ -19,6 +19,42 @@ public class VehicleDealar {
         this.suvs = new HashSet<SUV>();
         this.trucks = new HashSet<Truck>();
         this.turnover = 0;
+    }
+
+    //* Getters
+
+    public Set<Car> getCars() {
+        return cars;
+    }
+
+    public Set<SUV> getSuvs() {
+        return suvs;
+    }
+
+    public Set<Truck> getTrucks() {
+        return trucks;
+    }
+
+    public double getTurnover() {
+        return turnover;
+    }
+
+    //* Setters
+
+    public void setCars(Set<Car> cars) {
+        this.cars = cars;
+    }
+
+    public void setSuvs(Set<SUV> suvs) {
+        this.suvs = suvs;
+    }
+
+    public void setTrucks(Set<Truck> trucks) {
+        this.trucks = trucks;
+    }
+
+    public void setTurnover(double turnover) {
+        this.turnover = turnover;
     }
 
     //* Methods
