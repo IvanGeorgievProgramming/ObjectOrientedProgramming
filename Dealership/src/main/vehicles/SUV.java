@@ -37,7 +37,6 @@ public class SUV extends Car {
 
     // * Methods
 
-    // Print the vehicle's information
     public void printInfo(){
         System.out.println("Id: "+ this.getId() + " - " + this.getMaker() + ", " + this.getModel() + ", " + this.getYear() + ", " + this.getColor() + ", " + this.getPrice() + ", " + this.getSeatNumber() + ", " + this.getDoorsNumber() + ", " + this.getEquipmentLevel() + ", " + this.isHas4by4() + ", " + this.getClearance());
     }

@@ -16,10 +16,10 @@ public class App {
 
             //Create 2 new cars
             Car car1 = new Car("Ferrari", "550", 1996, "Red", 200000, 4, 4, EquipmentLevel.SPORT);
-            Car car2 = new Car("Toyota", "Avalon", 2005, "Gray", 16000, 5, 4, EquipmentLevel.BASIC);
+            Car car2 = new Car("Toyota", "Avalon", 2005, "Gray", 16000, 5, 4, EquipmentLevel.PREMIUM);
 
             //Create 2 new SUVs
-            SUV suv1 = new SUV("Toyota", "Highlander Hybrid", 2012, "Black", 30000, 5, 4, EquipmentLevel.PREMIUM, true, 0.5);
+            SUV suv1 = new SUV("Toyota", "Highlander Hybrid", 2012, "Black", 30000, 5, 4, EquipmentLevel.BASIC, true, 0.5);
             SUV suv2 = new SUV("Chevrolet", "S-10 Blazer", 1987, "Red", 9000, 5, 2, EquipmentLevel.BASIC, false, 0.8);
 
             //Create 2 new trucks
@@ -43,7 +43,6 @@ public class App {
             //Print the vehicles by maker
             Map <String, Map<Integer, Vehicle>> map = vehicleDealar.getAllVehiclesGroupedByMaker();
             for (Map.Entry<String, Map<Integer, Vehicle>> entry : map.entrySet()) {
-                //System.out.println(entry.getKey());
                 for (Map.Entry<Integer, Vehicle> entry2 : entry.getValue().entrySet()) {
                     System.out.println(entry2.getValue());
                 }

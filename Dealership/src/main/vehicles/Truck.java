@@ -39,7 +39,6 @@ public class Truck extends Vehicle {
 
     // * Methods
 
-    // Print the truck's information
     public void printInfo(){
         System.out.println("Id: "+ this.getId() + " - " + this.getMaker() + ", " + this.getModel() + ", " + this.getYear() + ", " + this.getColor() + ", " + this.getPrice() + ", " + this.getMaxLoadWeight() + ", " + this.getMaxLoadVolume());
     }
