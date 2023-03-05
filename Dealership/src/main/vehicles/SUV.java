@@ -9,8 +9,8 @@ public class SUV extends Car {
 
     // * Constructors
 
-    public SUV(int id, String maker, String model, int year, String color, double price, int seatNumber, int doorsNumber, EquipmentLevel equipmentLevel, boolean has4by4, double clearance) {
-        super(id, maker, model, year, color, price, seatNumber, doorsNumber, equipmentLevel);
+    public SUV(String maker, String model, int year, String color, double price, int seatNumber, int doorsNumber, EquipmentLevel equipmentLevel, boolean has4by4, double clearance) {
+        super(maker, model, year, color, price, seatNumber, doorsNumber, equipmentLevel);
         this.has4by4 = has4by4;
         this.clearance = clearance;
     }

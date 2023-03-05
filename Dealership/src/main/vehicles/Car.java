@@ -10,8 +10,8 @@ public class Car extends Vehicle {
 
     // * Constructors
 
-    public Car(int id, String maker, String model, int year, String color, double price, int seatNumber, int doorsNumber, EquipmentLevel equipmentLevel) {
-        super(id, maker, model, year, color, price);
+    public Car(String maker, String model, int year, String color, double price, int seatNumber, int doorsNumber, EquipmentLevel equipmentLevel) {
+        super(maker, model, year, color, price);
         if(seatNumber < 2 || seatNumber > 5){
             throw new IllegalArgumentException("Seat number must be between 2 and 5");
         }

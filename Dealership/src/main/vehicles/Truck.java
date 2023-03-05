@@ -9,8 +9,8 @@ public class Truck extends Vehicle {
     
     // * Constructors
 
-    public Truck(int id, String maker, String model, int year, String color, double price, int maxLoadWeight, double maxLoadVolume) {
-        super(id, maker, model, year, color, price);
+    public Truck(String maker, String model, int year, String color, double price, int maxLoadWeight, double maxLoadVolume) {
+        super(maker, model, year, color, price);
         this.maxLoadWeight = maxLoadWeight;
         this.maxLoadVolume = maxLoadVolume;
     }

@@ -11,13 +11,15 @@ public abstract class Vehicle {
     private String color;
     private double price;
 
+    private static int idCounter = 0;
+
     // * Constructors
 
-    public Vehicle(int id, String maker, String model, int year, String color, double price) {
+    public Vehicle(String maker, String model, int year, String color, double price) {
         if(year < 1885 || year > 2023){
             throw new IllegalArgumentException("Year must be between 1885 and 2023");
         }
-        this.id = id;
+        this.id = idCounter++;
         this.maker = maker;
         this.model = model;
         this.year = year;
