@@ -44,69 +44,81 @@ public class VehicleDealar {
         }
     }
 
-    // Get all vehicles with their ids grouped by model
-    public Map<String, Map<Integer, Vehicle>> getAllVehiclesByIdByMaker() {
-        // Make a map of vehicles with their ids grouped by model
-        Map<String, Map<Integer, Vehicle>> vehiclesByIdByMaker = new HashMap<String, Map<Integer, Vehicle>>();
+    // Get all vehicles with their ids grouped by maker
+    public Map<String, Map<Integer, Vehicle>> getAllVehiclesGroupedByMaker() {
+        // Make a map of vehicles grouped by maker
+        Map<String, Map<Integer, Vehicle>> vehiclesGroupedByMaker = new HashMap<String, Map<Integer, Vehicle>>();
         // Loop through the set of cars
         for (Car car : this.cars) {
-            // Check if the map of vehicles with their ids grouped by model contains the model of the car
-            if (vehiclesByIdByMaker.containsKey(car.getMaker())) {
-                // Get the map of vehicles with their ids grouped by model
-                Map<Integer, Vehicle> vehiclesById = vehiclesByIdByMaker.get(car.getMaker());
-                // Add the car to the map of vehicles with their ids grouped by model
-                vehiclesById.put(car.getId(), car);
-            }
-            // Check if the map of vehicles with their ids grouped by model does not contain the model of the car
-            else {
+            // Get the maker of the car
+            String maker = car.getMaker();
+            // Get the id of the car
+            int id = car.getId();
+            // Check if the maker is in the map of vehicles grouped by maker
+            if (!vehiclesGroupedByMaker.containsKey(maker)) {
                 // Make a map of vehicles with their ids
-                Map<Integer, Vehicle> vehiclesById = new HashMap<Integer, Vehicle>();
+                Map<Integer, Vehicle> vehiclesWithIds = new HashMap<Integer, Vehicle>();
                 // Add the car to the map of vehicles with their ids
-                vehiclesById.put(car.getId(), car);
-                // Add the map of vehicles with their ids to the map of vehicles with their ids grouped by model
-                vehiclesByIdByMaker.put(car.getMaker(), vehiclesById);
+                vehiclesWithIds.put(id, car);
+                // Add the map of vehicles with their ids to the map of vehicles grouped by maker
+                vehiclesGroupedByMaker.put(maker, vehiclesWithIds);
+            }
+            // Check if the maker is in the map of vehicles grouped by maker
+            else {
+                // Get the map of vehicles with their ids
+                Map<Integer, Vehicle> vehiclesWithIds = vehiclesGroupedByMaker.get(maker);
+                // Add the car to the map of vehicles with their ids
+                vehiclesWithIds.put(id, car);
             }
         }
         // Loop through the set of suvs
         for (SUV suv : this.suvs) {
-            // Check if the map of vehicles with their ids grouped by model contains the model of the suv
-            if (vehiclesByIdByMaker.containsKey(suv.getMaker())) {
-                // Get the map of vehicles with their ids grouped by model
-                Map<Integer, Vehicle> vehiclesById = vehiclesByIdByMaker.get(suv.getMaker());
-                // Add the suv to the map of vehicles with their ids grouped by model
-                vehiclesById.put(suv.getId(), suv);
-            }
-            // Check if the map of vehicles with their ids grouped by model does not contain the model of the suv
-            else {
+            // Get the maker of the suv
+            String maker = suv.getMaker();
+            // Get the id of the suv
+            int id = suv.getId();
+            // Check if the maker is in the map of vehicles grouped by maker
+            if (!vehiclesGroupedByMaker.containsKey(maker)) {
                 // Make a map of vehicles with their ids
-                Map<Integer, Vehicle> vehiclesById = new HashMap<Integer, Vehicle>();
+                Map<Integer, Vehicle> vehiclesWithIds = new HashMap<Integer, Vehicle>();
                 // Add the suv to the map of vehicles with their ids
-                vehiclesById.put(suv.getId(), suv);
-                // Add the map of vehicles with their ids to the map of vehicles with their ids grouped by model
-                vehiclesByIdByMaker.put(suv.getMaker(), vehiclesById);
+                vehiclesWithIds.put(id, suv);
+                // Add the map of vehicles with their ids to the map of vehicles grouped by maker
+                vehiclesGroupedByMaker.put(maker, vehiclesWithIds);
             }
-        }
-        // Loop through the set of trucks   
-        for (Truck truck : this.trucks) {
-            // Check if the map of vehicles with their ids grouped by model contains the model of the truck
-            if (vehiclesByIdByMaker.containsKey(truck.getMaker())) {
-                // Get the map of vehicles with their ids grouped by model
-                Map<Integer, Vehicle> vehiclesById = vehiclesByIdByMaker.get(truck.getMaker());
-                // Add the truck to the map of vehicles with their ids grouped by model
-                vehiclesById.put(truck.getId(), truck);
-            }
-            // Check if the map of vehicles with their ids grouped by model does not contain the model of the truck
+            // Check if the maker is in the map of vehicles grouped by maker
             else {
-                // Make a map of vehicles with their ids
-                Map<Integer, Vehicle> vehiclesById = new HashMap<Integer, Vehicle>();
-                // Add the truck to the map of vehicles with their ids
-                vehiclesById.put(truck.getId(), truck);
-                // Add the map of vehicles with their ids to the map of vehicles with their ids grouped by model
-                vehiclesByIdByMaker.put(truck.getMaker(), vehiclesById);
+                // Get the map of vehicles with their ids
+                Map<Integer, Vehicle> vehiclesWithIds = vehiclesGroupedByMaker.get(maker);
+                // Add the suv to the map of vehicles with their ids
+                vehiclesWithIds.put(id, suv);
             }
         }
-        // Return the map of vehicles with their ids grouped by model
-        return vehiclesByIdByMaker;
+        // Loop through the set of trucks
+        for (Truck truck : this.trucks) {
+            // Get the maker of the truck
+            String maker = truck.getMaker();
+            // Get the id of the truck
+            int id = truck.getId();
+            // Check if the maker is in the map of vehicles grouped by maker
+            if (!vehiclesGroupedByMaker.containsKey(maker)) {
+                // Make a map of vehicles with their ids
+                Map<Integer, Vehicle> vehiclesWithIds = new HashMap<Integer, Vehicle>();
+                // Add the truck to the map of vehicles with their ids
+                vehiclesWithIds.put(id, truck);
+                // Add the map of vehicles with their ids to the map of vehicles grouped by maker
+                vehiclesGroupedByMaker.put(maker, vehiclesWithIds);
+            }
+            // Check if the maker is in the map of vehicles grouped by maker
+            else {
+                // Get the map of vehicles with their ids
+                Map<Integer, Vehicle> vehiclesWithIds = vehiclesGroupedByMaker.get(maker);
+                // Add the truck to the map of vehicles with their ids
+                vehiclesWithIds.put(id, truck);
+            }
+        }
+        // Return the map of vehicles grouped by maker
+        return vehiclesGroupedByMaker;
     }
 
     // Get all suvs with a 4by4 system
