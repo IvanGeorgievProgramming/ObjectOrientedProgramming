@@ -56,4 +56,11 @@ public class Car extends Vehicle {
     public void setEquipmentLevel(EquipmentLevel equipmentLevel) {
         this.equipmentLevel = equipmentLevel;
     }
+
+    // * Methods
+
+    //Print the car's information
+    public void printInfo(){
+        System.out.println("Id: "+ this.getId() + " - " + this.getMaker() + ", " + this.getModel() + ", " + this.getYear() + ", " + this.getColor() + ", " + this.getPrice() + ", " + this.getSeatNumber() + ", " + this.getDoorsNumber() + ", " + this.getEquipmentLevel());
+    }
 }

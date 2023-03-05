@@ -1,5 +1,7 @@
 package main;
 
+import java.util.*;
+import main.vehicles.Vehicle;
 import main.vehicles.Car;
 import main.vehicles.SUV;
 import main.vehicles.Truck;
@@ -33,6 +35,71 @@ public class App {
             vehicleDealar.addVehicle(truck2);
 
             //Print the vehicles
+            vehicleDealar.printVehicles();
+
+            System.out.println();
+            System.out.println();
+
+            //Print the vehicles by maker
+            Map <String, Map<Integer, Vehicle>> map = vehicleDealar.getAllVehiclesGroupedByMaker();
+            for (Map.Entry<String, Map<Integer, Vehicle>> entry : map.entrySet()) {
+                //System.out.println(entry.getKey());
+                for (Map.Entry<Integer, Vehicle> entry2 : entry.getValue().entrySet()) {
+                    System.out.println(entry2.getValue());
+                }
+            }
+
+            System.out.println();
+            System.out.println();
+
+            // Get all SUVs with 4by4
+            Set<SUV> suvs = vehicleDealar.getAllSUVWith4By4();
+            for (SUV suv : suvs) {
+                suv.printInfo();
+            }
+
+            System.out.println();
+            System.out.println();
+
+            // Get all cars with premium equipment
+            Set<Car> cars = vehicleDealar.getAllCarsWithEquipmentLevel(EquipmentLevel.PREMIUM);
+            for (Car car : cars) {
+                car.printInfo();
+            }
+
+            System.out.println();
+            System.out.println();
+
+            // Get cheapest vehicle
+            Vehicle cheapestVehicle = vehicleDealar.getCheapestVehicle(vehicleDealar.getAllVehicles());
+            // Find if the vehicle is a car
+            if(cheapestVehicle instanceof Car){
+                Car cheapestCar = (Car) cheapestVehicle;
+                cheapestCar.printInfo();
+            }
+            // Find if the vehicle is a SUV
+            else if(cheapestVehicle instanceof SUV){
+                SUV cheapestSUV = (SUV) cheapestVehicle;
+                cheapestSUV.printInfo();
+            }
+            // Find if the vehicle is a truck
+            else if(cheapestVehicle instanceof Truck){
+                Truck cheapestTruck = (Truck) cheapestVehicle;
+                cheapestTruck.printInfo();
+            }
+
+            System.out.println();
+            System.out.println();
+
+            // Get total number of models
+            int totalNumberOfModels = vehicleDealar.getTotalNumberOfModels("Toyota");
+            System.out.println(totalNumberOfModels);
+
+            System.out.println();
+            System.out.println();
+
+            // Sell a vehicle
+            vehicleDealar.sellVehicle(1);
             vehicleDealar.printVehicles();
         }
         catch(IllegalArgumentException e){
