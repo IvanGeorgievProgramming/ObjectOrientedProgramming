@@ -1,7 +1,10 @@
 package main;
 
-import main.vehicles.*;
-import main.vehicledealer.*;
+import main.vehicles.Car;
+import main.vehicles.SUV;
+import main.vehicles.Truck;
+import main.vehicles.EquipmentLevel;
+import main.vehicledealer.VehicleDealar;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -20,6 +23,17 @@ public class App {
             //Create 2 new trucks
             Truck truck1 = new Truck("Freightliner", "FL86", 1984, "Blue and Red", 40000, 1000, 10);
             Truck truck2 = new Truck("Chevrolet", "Silverado 1500", 2017, "White", 60000, 1000, 12);
+
+            //Add the vehicles to the vehicle dealer
+            vehicleDealar.addVehicle(car1);
+            vehicleDealar.addVehicle(car2);
+            vehicleDealar.addVehicle(suv1);
+            vehicleDealar.addVehicle(suv2);
+            vehicleDealar.addVehicle(truck1);
+            vehicleDealar.addVehicle(truck2);
+
+            //Print the vehicles
+            vehicleDealar.printVehicles();
         }
         catch(IllegalArgumentException e){
             System.out.println(e.getMessage());

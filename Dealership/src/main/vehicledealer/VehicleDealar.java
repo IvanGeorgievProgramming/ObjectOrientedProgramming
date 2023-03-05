@@ -240,6 +240,25 @@ public class VehicleDealar {
             }
         }
     }
+
+    // Print the vehicles
+    public void printVehicles() {
+        // Loop through the set of cars
+        for (Car car : this.cars) {
+            // Print the car
+            System.out.println("Id: "+ car.getId() + ", Maker: " + car.getMaker() + ", Model: " + car.getModel() + ", Price: " + car.getPrice() + ", Equipment level: " + car.getEquipmentLevel());
+        }
+        // Loop through the set of suvs
+        for (SUV suv : this.suvs) {
+            // Print the suv
+            System.out.println("Id: "+ suv.getId() + ", Maker: " + suv.getMaker() + ", Model: " + suv.getModel() + ", Price: " + suv.getPrice() + ", Has 4by4: " + suv.isHas4by4() + ", Has clearance: " + suv.getClearance());
+        }
+        // Loop through the set of trucks
+        for (Truck truck : this.trucks) {
+            // Print the truck
+            System.out.println("Id: "+ truck.getId() + ", Maker: " + truck.getMaker() + ", Model: " + truck.getModel() + ", Price: " + truck.getPrice() + ", Max Load Weight: " + truck.getMaxLoadWeight() + ", Max Load Volume: " + truck.getMaxLoadVolume());
+        }
+    }
 }
 /*
 VehicleDealar
