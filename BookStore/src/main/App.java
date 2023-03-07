@@ -1,7 +1,7 @@
 package main;
 
-import main.book.Book;
-import main.other.Other;
+import main.item.book.Book;
+import main.item.other.Other;
 
 public class App {
     public static void main(String[] args) throws Exception {

@@ -1,25 +1,22 @@
-package main.other;
+package main.item.other;
 
-public class Other {
+public class Other extends main.item.Item {
     
     // * Parameters
 
     private String barcode;
     private String name;
     private double weight;
-    private double price;
 
     // * Constructors
 
     public Other(String barcode, String name, double weight, double price) {
+        super(price);
         if(barcode.length() != 13)
             throw new IllegalArgumentException("Barcode must be 13 digits long");
-        if(price <= 0)
-            throw new IllegalArgumentException("Price must be greater than 0");
         this.barcode = barcode;
         this.name = name;
         this.weight = weight;
-        this.price = price;
     }
 
     // * Getters
@@ -36,10 +33,6 @@ public class Other {
         return weight;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
     // * Setters
 
     public void setBarcode(String barcode) {
@@ -54,10 +47,6 @@ public class Other {
         this.weight = weight;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     // * Methods
 
     public void print() {
@@ -65,7 +54,7 @@ public class Other {
         System.out.println("Barcode: " + barcode);
         System.out.println("Name: " + name);
         System.out.println("Weight: " + weight);
-        System.out.println("Price: " + price);
+        System.out.println("Price: " + this.getPrice());
         System.out.println();
     }
 
@@ -97,11 +86,3 @@ public class Other {
         }
     }
 }
-
-/*
-Other
-Sting barcode - contains 13 numbers, mandatory field, can start with 0. Unique identifier. Cannot be changed.
-String name - item name, optional
-double weight - weight of the item in kilograms, optional.
-double price - price of the item, mandatory, greater than 0.
- */

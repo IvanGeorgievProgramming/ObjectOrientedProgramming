@@ -1,6 +1,6 @@
-package main.book;
+package main.item.book;
 
-public class Book {
+public class Book extends main.item.Item {
 
     // * Parameters
 
@@ -8,20 +8,17 @@ public class Book {
     private String author;
     private String name;
     private String description;
-    private double price;
 
     // * Constructors
 
     public Book(String isbn, String author, String name, String description, double price) {
+        super(price);
         if(isbn.length() != 13 && isbn.length() != 10)
             throw new IllegalArgumentException("ISBN must be 13 or 10 digits long");
-        if(price <= 0)
-            throw new IllegalArgumentException("Price must be greater than 0");
         this.isbn = isbn;
         this.author = author;
         this.name = name;
         this.description = description;
-        this.price = price;
     }
 
     // * Getters
@@ -42,10 +39,6 @@ public class Book {
         return description;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
     // * Setters
 
     public void setIsbn(String isbn) {
@@ -64,10 +57,6 @@ public class Book {
         this.description = description;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     // * Methods
 
     public void print() {
@@ -76,7 +65,7 @@ public class Book {
         System.out.println("Author: " + author);
         System.out.println("Name: " + name);
         System.out.println("Description: " + description);
-        System.out.println("Price: " + price);
+        System.out.println("Price: " + this.getPrice());
         System.out.println();
     }
 
@@ -123,12 +112,3 @@ public class Book {
         }
     }
 }
-
-/*
-Book
-String isbn - contains 13 or 10 numbers, required field, can start with 0. Unique identifier. Cannot be changed.
-String author - author, optional field.
-String name - book name, optional field.
-String description - description of the book, optional field.
-double price - price of the book, mandatory, greater than 0.
-*/
