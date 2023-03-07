@@ -49,13 +49,13 @@ public class Other extends main.item.Item {
 
     // * Methods
 
+    @Override
     public void print() {
-        System.out.println("Other:");
-        System.out.println("Barcode: " + barcode);
-        System.out.println("Name: " + name);
-        System.out.println("Weight: " + weight);
-        System.out.println("Price: " + this.getPrice());
-        System.out.println();
+        System.out.println("    Other:");
+        System.out.println("    Barcode: " + barcode);
+        System.out.println("    Name: " + name);
+        System.out.println("    Weight: " + weight);
+        System.out.println("    Price: " + this.getPrice());
     }
 
     // * Builder

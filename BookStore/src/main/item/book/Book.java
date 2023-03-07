@@ -59,14 +59,14 @@ public class Book extends main.item.Item {
 
     // * Methods
 
+    @Override
     public void print() {
-        System.out.println("Book:");
-        System.out.println("ISBN: " + isbn);
-        System.out.println("Author: " + author);
-        System.out.println("Name: " + name);
-        System.out.println("Description: " + description);
-        System.out.println("Price: " + this.getPrice());
-        System.out.println();
+        System.out.println("    Book:");
+        System.out.println("    ISBN: " + isbn);
+        System.out.println("    Author: " + author);
+        System.out.println("    Name: " + name);
+        System.out.println("    Description: " + description);
+        System.out.println("    Price: " + this.getPrice());
     }
 
     // * Builder

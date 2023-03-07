@@ -25,4 +25,8 @@ public abstract class Item {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    // * Methods
+
+    public abstract void print();
 }
