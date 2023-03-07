@@ -2,49 +2,47 @@ package main.pair;
 
 import main.item.Item;
 
-public class Pair {
+public class Pair <Item, Integer> {
 
     // * Parameters
 
-    private Item first;
-    private int second;
+    private Item item;
+    private Integer quantity;
 
     // * Constructors
 
-    public Pair(Item first, int second) {
-        if(second < 0)
-            throw new IllegalArgumentException("Second must be greater than or equal to 0");
-        this.first = first;
-        this.second = second;
+    public Pair(Item item, Integer quantity) {
+        this.item = item;
+        this.quantity = quantity;
     }
 
     // * Getters
 
-    public Item getFirst() {
-        return first;
+    public Item getItem() {
+        return item;
     }
 
-    public int getSecond() {
-        return second;
+    public Integer getQuantity() {
+        return quantity;
     }
 
     // * Setters
 
-    public void setFirst(Item first) {
-        this.first = first;
+    public void setItem(Item item) {
+        this.item = item;
     }
 
-    public void setSecond(int second) {
-        this.second = second;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
     // * Methods
 
     public void print() {
         System.out.println("Pair:");
-        System.out.println("First: " + first);
-        this.first.print();
-        System.out.println("Second: " + second);
+        System.out.println("Item: " + item);
+        //this.item.print();
+        System.out.println("Quantity: " + quantity);
         System.out.println();
     }
 }
